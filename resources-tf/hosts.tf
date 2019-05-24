@@ -21,7 +21,7 @@ resource "google_compute_instance" "zipkin_host" {
   }
 
   connection {
-    host = self.public_ip
+    host = self.network_interface.0.access_config.0.nat_ip
     type = "ssh"
     user = "root"
     private_key = "${file("~/.ssh/google_compute_engine")}"

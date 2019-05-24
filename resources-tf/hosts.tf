@@ -16,7 +16,7 @@ resource "google_compute_instance" "zipkin_host" {
   ]
 
   network_interface {
-    network = "${data.google_compute_network.default_network.self_link}"
+    network = "default"
     access_config {}
   }
 

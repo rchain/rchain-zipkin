@@ -1,0 +1,10 @@
+#!/bin/bash
+# Shebang is for Terraform script provisioner
+
+REPO_URL=https://github.com/rchain/rchain-zipkin
+REPO_DIR=/opt/rchain-zipkin
+SETUP_SCRIPT_URL=https://raw.githubusercontent.com/rchain/rchain-zipkin/master/update-run-setup
+
+if [[ -z "$SETUP_SCRIPT_RUNNING" ]]; then
+	source <(curl -fsSL "$SETUP_SCRIPT_URL")
+fi

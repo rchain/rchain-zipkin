@@ -21,5 +21,6 @@ if [[ -z "$(docker ps -q -f name='^zipkin$')" ]]; then
 	docker rm zipkin || true
 	docker pull openzipkin/zipkin
 	docker run -d --name=zipkin --network=host --restart=unless-stopped \
+		-e JAVA_OPTS='-Xmx3g' \
 		openzipkin/zipkin
 fi
